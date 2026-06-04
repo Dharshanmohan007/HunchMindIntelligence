@@ -146,7 +146,7 @@ export default function Hero() {
       {/* Full-bleed image starting from ~38% left */}
       <div className="absolute inset-0" style={{ left: "38%" }}>
         <img
-          src="/hero_bg.png"
+          src="/hero.png"
           alt="South India Market"
           className="w-full h-full object-cover"
           style={{ objectPosition: "center center" }}
