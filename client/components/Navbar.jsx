@@ -10,9 +10,9 @@ export default function Navbar() {
             {/* Logo */}
             <Link href="/" className="flex items-center">
             <img
-                src="/images/logo.png"
+                src="/logo_bg.png"
                 alt="HunchMind Intelligence"
-                className="h-12 w-auto"
+                className="h-30 w-auto"
             />
             </Link>
 

@@ -70,9 +70,9 @@ export default function Footer() {
             <div>
 
                 <img
-                src="/images/logo.png"
+                src="/logo_bg.png"
                 alt="HunchMind"
-                className="h-12 mb-5"
+                className="h-25 "
                 />
 
                 <p className="text-gray-600 leading-7">
