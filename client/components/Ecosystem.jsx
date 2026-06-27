@@ -26,7 +26,7 @@ export default function Ecosystem() {
         lg:bottom-[-60px]
         z-20
         w-full
-        max-w-7xl
+        max-w-[1360px]
         -translate-x-1/2
         px-4
         sm:px-6
@@ -35,42 +35,38 @@ export default function Ecosystem() {
         lg:mt-0
       "
     >
-      <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-lg">
+      <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-[0_18px_60px_rgba(0,0,0,0.12)]">
         <div
           className="
             grid
             grid-cols-2
             md:grid-cols-3
-            lg:grid-cols-7
+            lg:grid-cols-[320px_repeat(6,minmax(0,1fr))]
           "
         >
           {/* Heading */}
           <div
             className="
               col-span-2
-              md:col-span-3
-              lg:col-span-1
-              relative
-              flex
-              items-center
-              justify-center
-              lg:justify-start
-              p-5
-              sm:p-6
-              text-center
-              lg:text-left
-              border-b
-              lg:border-b-0
-              lg:border-r
-              border-gray-200
+            md:col-span-3
+            lg:col-span-1
+            flex
+            items-center
+            justify-start
+            px-8
+            py-6
+            border-b
+            lg:border-b-0
+            lg:border-r
+            border-gray-200
             "
           >
             <div>
-              <span className="block text-sm sm:text-base font-semibold text-black">
+              <span className="block text-xs sm:text-sm lg:text-[15px] font-semibold text-black">
                 We work with the entire
               </span>
 
-              <span className="block text-sm sm:text-base font-semibold text-green-700">
+              <span className="block text-xs sm:text-sm lg:text-[15px] font-semibold text-green-700">
                 supply chain ecosystem
               </span>
             </div>
@@ -83,19 +79,18 @@ export default function Ecosystem() {
               <div
                 key={index}
                 className="
-                  relative
-                  flex
-                  flex-col
-                  items-center
-                  justify-center
-                  gap-3
-                  p-5
-                  sm:p-6
-                  border-b
-                  lg:border-b-0
-                  border-gray-200
-                  lg:last:border-r-0
-                  lg:border-r
+                flex
+                flex-col
+                items-center
+                justify-center
+                gap-2
+                px-3
+                py-5
+                border-b
+                lg:border-b-0
+                border-gray-200
+                lg:border-r
+                last:lg:border-r-0
                 "
               >
                 <Icon

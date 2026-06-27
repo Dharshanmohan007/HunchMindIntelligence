@@ -84,9 +84,9 @@ export default function WhatWeDo() {
         md:px-8
         lg:px-10
         xl:px-12
-        pt-20
+        pt-36
+        lg:pt-44
         md:pt-28
-        lg:pt-32
         pb-16
         lg:pb-20
       "
@@ -152,8 +152,8 @@ export default function WhatWeDo() {
                 shadow-sm
                 transition-all
                 duration-300
-                hover:-translate-y-1
-                hover:shadow-lg
+                hover:-translate-y-2
+                hover:shadow-xl
               "
             >
               <div
