@@ -102,11 +102,16 @@ const languages = [
 function TempleIcon() {
   return (
     <svg
-      width="20"
-      height="20"
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      className="
+        w-4 h-4
+        sm:w-5 sm:h-5
+        lg:w-5 lg:h-5
+        xl:w-6 xl:h-6
+        flex-shrink-0
+      "
     >
       <polygon points="12,2 10.5,5 13.5,5" fill="#374151" opacity="0.65" />
       <rect x="9.5" y="5" width="5" height="2.5" rx="0.3" fill="#374151" opacity="0.72" />
@@ -121,17 +126,81 @@ function TempleIcon() {
 
 function LanguageItem({ native, english }) {
   return (
-    <div className="flex justify-between items-center py-3 border-b border-gray-100 last:border-b-0 group cursor-pointer hover:bg-gray-50 px-1 rounded-lg transition-colors">
-      <div className="flex items-center gap-3">
+    <div
+      className="
+        group
+        flex
+        items-center
+        justify-between
+        rounded-lg
+        border-b
+        border-gray-100
+        px-2
+        py-3
+        transition-colors
+        hover:bg-gray-50
+        last:border-b-0
+        cursor-pointer
+      "
+    >
+      <div
+        className="
+          flex
+          items-center
+          gap-2
+          sm:gap-3
+          min-w-0
+        "
+      >
         <TempleIcon />
-        <div className="flex items-baseline gap-2">
-          <span className="text-[15px] font-bold text-[#111827]">{native}</span>
-          <span className="text-xs text-gray-400 font-normal">{english}</span>
+
+        <div
+          className="
+            flex
+            flex-col
+            sm:flex-row
+            sm:items-baseline
+            gap-0
+            sm:gap-2
+            min-w-0
+          "
+        >
+          <span
+            className="
+              text-sm
+              sm:text-[15px]
+              lg:text-base
+              font-bold
+              text-[#111827]
+              truncate
+            "
+          >
+            {native}
+          </span>
+
+          <span
+            className="
+              text-[10px]
+              sm:text-xs
+              text-gray-400
+              font-normal
+              truncate
+            "
+          >
+            {english}
+          </span>
         </div>
       </div>
+
       <ArrowRight
-        size={14}
-        className="text-gray-300 group-hover:text-[#0C8A45] transition-colors flex-shrink-0"
+        className="
+          h-4
+          w-4
+          flex-shrink-0
+          text-gray-300
+          transition-colors
+          group-hover:text-[#0C8A45]
+        "
       />
     </div>
   );
@@ -140,111 +209,229 @@ function LanguageItem({ native, english }) {
 export default function Hero() {
   return (
     <section
-      className="relative w-full overflow-hidden"
-      style={{ background: "#F5F4EF", minHeight: "calc(100vh - 72px)" }}
+      className="relative w-full overflow-hidden bg-[#F5F4EF] min-h-[calc(100vh-64px)] lg:min-h-[calc(100vh-80px)]"
     >
-      {/* Full-bleed image starting from ~38% left */}
-      <div className="absolute inset-0" style={{ left: "38%" }}>
+      {/* Background Image */}
+      <div
+        className="
+          absolute
+          inset-0
+          left-0
+          sm:left-[15%]
+          md:left-[25%]
+          lg:left-[38%]
+          xl:left-[40%]
+          2xl:left-[42%]
+        "
+      >
         <img
           src="/hero.png"
           alt="South India Market"
-          className="w-full h-full object-cover"
-          style={{ objectPosition: "center center" }}
+          className="
+            h-full
+            w-full
+            object-cover
+            object-center
+            opacity-20
+            sm:opacity-30
+            lg:opacity-100
+          "
         />
       </div>
 
-      {/* Left-to-right fade overlay */}
+      {/* Overlay */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "linear-gradient(to right, #F5F4EF 0%, #F5F4EF 26%, rgba(245,244,239,0.88) 36%, rgba(245,244,239,0.45) 48%, rgba(245,244,239,0.0) 64%)",
+            "linear-gradient(to right, #F5F4EF 0%, #F5F4EF 25%, rgba(245,244,239,.92) 35%, rgba(245,244,239,.55) 48%, rgba(245,244,239,0) 68%)",
         }}
       />
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 lg:px-14">
+      {/* Main Content */}
+      <div
+        className="
+          relative
+          z-10
+          mx-auto
+          max-w-screen-2xl
+          px-5
+          sm:px-6
+          md:px-8
+          lg:px-12
+          xl:px-16
+          2xl:px-20
+          3xl:px-24
+        "
+      >
         <div
-          className="grid lg:grid-cols-2 items-center"
-          style={{ minHeight: "calc(100vh - 72px)" }}
+          className="
+            grid
+            grid-cols-1
+            lg:grid-cols-2
+            items-center
+            gap-12
+            lg:gap-16
+            min-h-[calc(100vh-64px)]
+            lg:min-h-[calc(100vh-80px)]
+          "
         >
           {/* LEFT */}
-          <div className="py-16 lg:py-20">
+          <div
+            className="
+              py-12
+              sm:py-16
+              lg:py-20
+              text-center
+              lg:text-left
+            "
+          >
             <p
-              className="uppercase font-bold text-[#0C8A45] mb-6 tracking-[0.18em]"
-              style={{ fontSize: "11px" }}
+              className="
+                uppercase
+                font-bold
+                text-[#0C8A45]
+                tracking-[0.18em]
+                mb-5
+                text-[10px]
+                sm:text-[11px]
+                md:text-xs
+              "
             >
               Intelligence That Drives Movement
             </p>
 
             <h1
-              className="font-bold text-[#081225] leading-[1.05] mb-7"
+              className="
+                font-bold
+                leading-tight
+                text-[#081225]
+                mb-6
+                text-[38px]
+                sm:text-[46px]
+                md:text-[54px]
+                lg:text-[60px]
+                xl:text-[68px]
+                2xl:text-[76px]
+              "
               style={{
-                fontFamily: "'Georgia', 'Palatino Linotype', 'Book Antiqua', serif",
-                fontSize: "clamp(44px, 4.8vw, 72px)",
+                fontFamily:
+                  "'Georgia','Palatino Linotype','Book Antiqua',serif",
               }}
             >
               Intelligence for
               <br />
-              Smarter{" "}
-              <span className="text-[#0C8A45]">Supply</span>
+              Smarter <span className="text-[#0C8A45]">Supply</span>
               <br />
               <span className="text-[#0C8A45]">Chains.</span>
             </h1>
 
             <p
-              className="text-[#4B5563] leading-7 max-w-[420px]"
-              style={{ fontSize: "15px" }}
+              className="
+                mx-auto
+                lg:mx-0
+                max-w-md
+                text-gray-600
+                leading-7
+                text-sm
+                sm:text-[15px]
+                lg:text-base
+              "
             >
               We transform fragmented data into actionable insights
               to help businesses move smarter, reduce waste and
               maximize profitability across South India.
             </p>
 
-            <div className="flex items-center gap-4 mt-10">
+            {/* Buttons */}
+            <div
+              className="
+                mt-10
+                flex
+                flex-col
+                sm:flex-row
+                justify-center
+                lg:justify-start
+                gap-4
+              "
+            >
               <button
-                className="bg-[#0C8A45] hover:bg-[#09703a] text-white font-semibold flex items-center gap-2 transition-colors"
-                style={{
-                  padding: "14px 28px",
-                  borderRadius: "14px",
-                  fontSize: "15px",
-                  boxShadow: "0 8px 24px rgba(12,138,69,0.28)",
-                }}
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-xl
+                  bg-[#0C8A45]
+                  px-6
+                  py-4
+                  text-sm
+                  font-semibold
+                  text-white
+                  shadow-lg
+                  transition
+                  hover:bg-[#09703a]
+                "
               >
                 Explore Our Vision
                 <ArrowRight size={16} />
               </button>
 
               <button
-                className="bg-white border border-gray-200 hover:bg-gray-50 text-[#081225] font-semibold flex items-center gap-2 transition-colors"
-                style={{
-                  padding: "14px 28px",
-                  borderRadius: "14px",
-                  fontSize: "15px",
-                  boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
-                }}
+                className="
+                  flex
+                  items-center
+                  justify-center
+                  gap-2
+                  rounded-xl
+                  border
+                  border-gray-200
+                  bg-white
+                  px-6
+                  py-4
+                  text-sm
+                  font-semibold
+                  text-[#081225]
+                  shadow-sm
+                  transition
+                  hover:bg-gray-50
+                "
               >
                 Watch Video
-                <PlayCircle size={20} className="text-[#0C8A45]" />
+                <PlayCircle
+                  size={20}
+                  className="text-[#0C8A45]"
+                />
               </button>
             </div>
           </div>
 
-          {/* RIGHT — Language card */}
-          <div className="relative flex justify-end items-start pt-16">
+          {/* RIGHT */}
+          <div
+            className="
+              flex
+              justify-center
+              lg:justify-end
+              items-start
+              pb-10
+              lg:pb-0
+            "
+          >
             <div
-              className="bg-white rounded-2xl p-5"
-              style={{
-                width: "272px",
-                boxShadow: "0 20px 60px rgba(0,0,0,0.14), 0 4px 16px rgba(0,0,0,0.08)",
-              }}
+              className="
+                w-full
+                max-w-sm
+                lg:max-w-[272px]
+                rounded-2xl
+                bg-white
+                p-5
+                shadow-[0_20px_60px_rgba(0,0,0,0.14)]
+              "
             >
-              <h3
-                className="font-bold text-[#111827] mb-3"
-                style={{ fontSize: "18px" }}
-              >
+              <h3 className="mb-4 text-lg font-bold text-[#111827]">
                 We speak your language
               </h3>
+
               {languages.map((lang) => (
                 <LanguageItem
                   key={lang.english}
